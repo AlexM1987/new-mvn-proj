@@ -1,2 +1,5 @@
-package model;public class Dog {
+package model;
+
+public class Dog {
+    private int age;
 }
