@@ -11,7 +11,7 @@ import java.util.Objects;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Person {
+public class Person implements Cloneable{
 
 
     private int id;
@@ -48,5 +48,16 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, lName, age, cat);
+    }
+
+    @Override
+    public Person clone() {
+        Person clone = null;
+        try {
+            clone = (Person)super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return clone;
     }
 }
