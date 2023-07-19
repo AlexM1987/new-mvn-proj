@@ -11,6 +11,10 @@ public class CarNotFoundException extends Exception {
         super("Car is not found", e);
     }
 
+    public CarNotFoundException(String msg, Exception e) {
+        super(msg, e);
+    }
+
     public CarNotFoundException(String msg) {
         super(msg);
     }

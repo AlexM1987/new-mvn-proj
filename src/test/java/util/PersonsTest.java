@@ -4,6 +4,7 @@ import com.sun.javaws.exceptions.CacheAccessException;
 import errors.CarNotFoundException;
 import model.Car;
 import model.Person;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class PersonsTest {
@@ -22,4 +23,15 @@ public class PersonsTest {
             e.printStackTrace();
         }
     }
+
+//    @Test
+//    public void driveTest2() {
+//
+//        try {
+//            PersonsUtil.drive(null);
+//        }catch (CarNotFoundException e){
+//           Throwable th = e.getCause();
+//            Assert.assertArrayEquals(NullPointerException.class, th.getClass());
+//        }
+//    }
 }
