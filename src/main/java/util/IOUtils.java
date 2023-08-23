@@ -91,9 +91,24 @@ public class IOUtils {
             System.out.println("Search text is not found.");
         }
     }
+
+//    public static String readFileByLines(String path){
+//        StringBuilder sb = new StringBuilder(214748364);
+//        try(BufferedReader reader = new BufferedReader(
+//                new FileReader(path),214748364)) {
+//            int characterCode;
+//            while ((characterCode = reader.read()) != -1){
+//                data += (char)characterCode;
+//            }
+//        } catch (FileNotFoundException e) {
+//            System.err.println("Check you file path");
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return sb;
+//    }
 }
-
-
 
 class Resource implements Closeable{
     private String data = new String();
@@ -110,6 +125,42 @@ class Resource implements Closeable{
     }
     public void printData(){
         System.out.println(data);
+    }
+}
+
+class Tasks{
+    static void t1(String path, String resultPath){
+        System.out.println("TASK 1. Reverse file text.");
+        //1 step: read content
+       String data = IOUtils.readFile(path);
+
+        //2. process String value (reverse)
+        String result = new StringBuilder(data).reverse().toString();
+
+        //3. write result file
+        IOUtils.write(result, resultPath);
+    }
+
+//  !!!  static void t2(String filePath, String resultFilePath, String search){
+//        //search word : counter
+//        //example : "something" : 10 times in the text (ignoring register)
+//        String data = IOUtils.readFile(filePath);
+//        int counter = 0;
+//        int a = 0;
+//        while (a <= 15000){
+//            a = data.indexOf("Мир", a);
+//            counter++;
+//        }
+//        String result = "Number of times: " + counter;
+//        System.out.println("Number of times: " + counter);
+//        //IOUtils.write(result, resultFilePath);
+//
+//    }
+
+    public static void main(String[] args) {
+        //t1("D:\\io_tests\\tasks\\task #1.txt", "D:\\io_tests\\tasks\\result_task #1.txt");
+        //!!! t2("D:\\io_tests\\war_and_peace.ru.txt",
+        //        "D:\\io_tests\\t2_war_and_peace.ru.txt", "Мир");
     }
 }
 

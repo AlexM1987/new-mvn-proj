@@ -61,4 +61,11 @@ public class IOUtilsTest {
         IOUtils.copyFiles(dstPath, filePath1, filePath2, filePath3, filePath4, filePath5);
         Assert.assertEquals("Wrong content", "ABCDE", IOUtils.readFile(dstPath));
     }
+
+//    @Test
+//    public void readByLineTest(){
+//        String filePath =
+//        IOUtils.readFileByLines(filePath);
+//        System.out.println();
+//    }
 }
